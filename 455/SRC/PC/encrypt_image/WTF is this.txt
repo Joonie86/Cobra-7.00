@@ -1,0 +1,2 @@
+This tool was used to encrypt lambda.db of psp launcher package.
+There is no use for this anymore. 

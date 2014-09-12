@@ -1,0 +1,10 @@
+ps3ntfs_file_to_sectors added to ps3_io.c/ntfs.h
+ntfs_file_to_sectors added to ntfsfile.o/ntfsfile.h
+ntfs_file_to_sectors added to ntfs.c
+file_to_sectors added to devoptab_t (iosupport.h)
+
+ntfsMountAll (ntfs.c) would mount ext volumes with "ntfs" path, unlike ntfsMountDevice.
+The part of code that sets mount name was copy pasted from ntfsMountDevice into ntfsMountAll to correct this.
+
+The added functions are based on ntfs_open_r, ntfs_read_r, and ntfs_attr_pread_i source codes.
+A bit ugly, for cleaning, the repeated 512 constant should be replaced with proper code, and the comments from the copy pasted code removed. 

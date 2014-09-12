@@ -1,0 +1,5 @@
+This is graf chokolo sendfile partially modified so that it doesn't wait for the ACK.
+The original tool gave me some problems on some ps3.
+
+This tool can be used to send stage2.bin if you flash stage 1.5.
+You could give either this version or original one a try to see which one works fine for you.
