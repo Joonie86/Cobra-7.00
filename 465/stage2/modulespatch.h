@@ -465,8 +465,8 @@
 
 /* explore_category_game *///DONE
 #define ps2_nonbw_offset2		0x68354 // Done
-#define unk_patch_offset1		0x546C // unknown patch from E3 cfw */
-#define unk_patch_offset2		0x5490 // unknown patch from E3 cfw */
+//#define unk_patch_offset1		0x546C // unknown patch from E3 cfw */
+//#define unk_patch_offset2		0x5490 // unknown patch from E3 cfw */
 
 /* bdp_disc_check_plugin */ //DONE
 #define dvd_video_region_check_offset	0x152C //
