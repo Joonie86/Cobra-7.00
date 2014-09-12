@@ -7,8 +7,8 @@
 #include <ps2emu/patch.h>
 #include <ps2emu/symbols.h>
 
-#ifdef FIRMWARE_4_46
-#define EXTENDED_DATA	(0x821000+0x2102388)
+#ifdef FIRMWARE_4_65
+#define EXTENDED_DATA	(0x821000+0x2953478)
 #endif
 
 #define CONFIG_FILE	"/tmp/cfg.bin"

@@ -14,7 +14,7 @@
 #define DISC_SIZE_OFFSET	0x255A0
 #define DISC_TYPE_OFFSET	0x25290
 
-#elif defined(FIRMWARE_4_46)
+#elif defined(FIRMWARE_4_46) || defined(FIRMWARE_4_65)
 
 #define AUTH_OFFSET		0x20680
 #define DISC_SIZE_OFFSET	0x25694
@@ -22,7 +22,7 @@
 
 #endif
 
-#if defined(FIRMWARE_3_41) || defined(FIRMWARE_3_55) || defined(FIRMWARE_4_30) || defined(FIRMWARE_4_46)
+#if defined(FIRMWARE_3_41) || defined(FIRMWARE_3_55) || defined(FIRMWARE_4_30) || defined(FIRMWARE_4_46)|| defined(FIRMWARE_4_65)
 
 #define DATA_TOC_OFFSET		-0x7358
 #define DATA_SUBTOC_OFFSET	0x20

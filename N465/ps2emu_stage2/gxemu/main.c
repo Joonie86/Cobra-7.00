@@ -19,7 +19,7 @@
 
 #endif
 
-#if defined(FIRMWARE_3_41) || defined(FIRMWARE_3_55) || defined(FIRMWARE_4_30) || defined(FIRMWARE_4_46)
+#if defined(FIRMWARE_3_41) || defined(FIRMWARE_3_55) || defined(FIRMWARE_4_30) || defined(FIRMWARE_4_46) || defined(FIRMWARE_4_65)
 
 #define DATA_TOC_OFFSET		-0x5B00
 #define	LPAR_TOC_OFFSET		-0x5BC8

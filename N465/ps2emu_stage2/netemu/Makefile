@@ -10,14 +10,14 @@ LIBSDIR         =
 LIBS            =
 BUILD_TYPE      = release
 
-GEN		= ../ps2netemu_gen446/ps2netemu_gen
-SRC_SELF=../ps2netemu_gen446/ps2_netemu.self
+GEN		= ../ps2netemu_gen465/ps2netemu_gen
+SRC_SELF=../ps2netemu_gen465/ps2_netemu.self
 OUT_SELF=ps2_netemu.self
 
 
 CFLAGS = -ffunction-sections -fdata-sections -Os -m64 -fno-builtin -fno-exceptions \
 			   -Os -Wall -Wno-strict-aliasing $(foreach dir,$(INCLUDE),-I$(dir)) \
-			   -DPS2EMU -DPS2NETEMU -DFIRMWARE_4_46 -ffreestanding 
+			   -DPS2EMU -DPS2NETEMU -DFIRMWARE_4_65 -ffreestanding 
 CFLAGS += --std=gnu99
 
 ifeq ($(BUILD_TYPE), debug)

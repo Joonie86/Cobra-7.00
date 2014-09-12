@@ -7,23 +7,23 @@
 
 #define PS2EMU
 #define PS2NETEMU
-#define FIRMWARE_4_46
+#define FIRMWARE_4_65
 
 #include "../../ps2emu/include/ps2emu/symbols.h"
 
-#define read_iso_size_call	0x131EC0
-#define fstat_iso_call		0x131DB4
-#define open_iso_call1		0x131D78
-#define open_iso_call2		0x132E28
-#define savedata_patch		0x117858
+#define read_iso_size_call	0x136038
+#define fstat_iso_call		0x135F2C
+#define open_iso_call1		0x135EF0
+#define open_iso_call2		0x136F74 // 136FA0 MAYBE?
+#define savedata_patch		0x11AFB4
 
-#define ADDITIONAL_CODE_SIZE		0x6800
+#define ADDITIONAL_CODE_SIZE		0xC00
 #define ADDITIONAL_DATA_SIZE		0x1000
 
-#define CODE_SECTION_ADDR		0x289030
-#define DATA_SECTION_ADDR		0xb20300
+#define CODE_SECTION_ADDR		0x28F800
+#define DATA_SECTION_ADDR		0xb20A00
 #define PAYLOAD_ADDR		(CODE_SECTION_ADDR+0x78+8) /* CODE_SECTION_ADDR + CODE_SECTION_SIZE + 8 to align to 0x10 */
-#define SH_ADDR			0x296878 /* look in self, not in elf */
+#define SH_ADDR			0x2921C8 /* look in self, search 00 00 00 0B 00 00 00 01 00 00 00 00 00 00 00 06 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 18 10*/
 
 #define MAKE_JUMP(addr, to) *(uint32_t *)(addr) = (0x12 << 26) | ((((to-(uint64_t)(addr))>>2)&0xFFFFFF) << 2)
 #define MAKE_CALL(addr, to) *(uint32_t *)(addr) = (0x12 << 26) | ((((to-(uint64_t)(addr))>>2)&0xffffff) << 2) | 1
@@ -589,9 +589,9 @@ int main(int argc, char *argv[])
 	fclose(elf);
 	
 	//command3("self_rebuilder", "temp.elf", self_output, "temp.self");
-	command15("scetool.exe", "-v", "--sce-type=SELF", "--compress-data=TRUE", "--compress-data=TRUE", "--skip-sections=FALSE", 
+	command15("scetool", "-v", "--sce-type=SELF", "--compress-data=TRUE", "--compress-data=TRUE", "--skip-sections=FALSE", 
 		 "--self-auth-id=1020000401000001", "--self-add-shdrs=TRUE", "--self-vendor-id=02000003", "--self-type=LV2", 
-	         "--self-fw-version=0004003000000000", "--key-revision=0", "--self-app-version=0004004600000000", "--encrypt", "temp.elf", self_output);
+	         "--self-fw-version=0004003000000000", "--key-revision=0", "--self-app-version=0004006500000000", "--encrypt", "temp.elf", self_output);
 	
 	//system("rm temp.elf");
 	

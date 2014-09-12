@@ -209,9 +209,9 @@ int main(int argc, char *argv[])
 	fclose(elf);
 	
 	//command3("self_rebuilder", "temp.elf", self_output, "temp.self");
-	command15("scetool.exe", "-v", "--sce-type=SELF", "--compress-data=TRUE", "--compress-data=TRUE", "--skip-sections=FALSE", 
+	command15("scetool", "-v", "--sce-type=SELF", "--compress-data=TRUE", "--compress-data=TRUE", "--skip-sections=FALSE", 
 		 "--self-auth-id=1020000401000001", "--self-add-shdrs=TRUE", "--self-vendor-id=02000003", "--self-type=LV2", 
-	         "--self-fw-version=0004003000000000", "--key-revision=0", "--self-app-version=0004004600000000", "--encrypt", "temp.elf", self_output);
+	         "--self-fw-version=0004003000000000", "--key-revision=0", "--self-app-version=0004006500000000", "--encrypt", "temp.elf", self_output);
 	
 	//system("rm temp.elf");
 	

@@ -127,8 +127,10 @@ SprxPatch basic_plugins_patches[] =
 
 SprxPatch nas_plugin_patches[] =
 {
+	/*
 	{ elf2_func1 + elf2_func1_offset, NOP, &condition_true },
 	{ geohot_pkg_offset, LI(R0, 0), &condition_true },
+	*/
 	{ 0 }
 };
 
@@ -1122,7 +1124,7 @@ void load_boot_plugins(void)
 	
 	if (!vsh_process)
 		return;
-	
+
 	if (cellFsOpen(BOOT_PLUGINS_FILE, CELL_FS_O_RDONLY, &fd, 0, NULL, 0) != 0)
 		return;
 	

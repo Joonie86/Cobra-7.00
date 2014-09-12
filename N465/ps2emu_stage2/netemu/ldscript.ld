@@ -1,7 +1,7 @@
 OUTPUT_FORMAT("elf64-powerpc")
 OUTPUT_ARCH(powerpc:common64)
 
-__base = 0x2890B0;
+__base = 0x28F880; //CODE_SECTION_ADDR + 0x80
 
 ENTRY(_start)
 
