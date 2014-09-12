@@ -23,7 +23,7 @@
 #define CODE_SECTION_ADDR		0x28F800
 #define DATA_SECTION_ADDR		0xb20A00
 #define PAYLOAD_ADDR		(CODE_SECTION_ADDR+0x78+8) /* CODE_SECTION_ADDR + CODE_SECTION_SIZE + 8 to align to 0x10 */
-#define SH_ADDR			0x2921C8 /* look in self, search 00 00 00 0B 00 00 00 01 00 00 00 00 00 00 00 06 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 18 10*/
+#define SH_ADDR			0x2921C8 /* look in self, not in elf */
 
 #define MAKE_JUMP(addr, to) *(uint32_t *)(addr) = (0x12 << 26) | ((((to-(uint64_t)(addr))>>2)&0xFFFFFF) << 2)
 #define MAKE_CALL(addr, to) *(uint32_t *)(addr) = (0x12 << 26) | ((((to-(uint64_t)(addr))>>2)&0xffffff) << 2) | 1

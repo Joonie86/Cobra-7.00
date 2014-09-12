@@ -1,7 +1,7 @@
 OUTPUT_FORMAT("elf64-powerpc")
 OUTPUT_ARCH(powerpc:common64)
 
-__base = 0x28F880;
+__base = 0x0BADCAFE00000008;
 
 ENTRY(_start)
 
@@ -20,23 +20,19 @@ SECTIONS {
 		*(.text)
 		*(.text.*)
 	}
-
-	. = ALIGN(32);
 	.rodata : {
 		*(.rodata)
 		*(.rodata.*)
 	}
 
-	. = ALIGN(32);
 	__reloc_start = .;
+
 	.data : {
 		*(.data)
 		*(.data.*)
 		*(.sdata)
 		*(.sdata.*)
 	}
-
-	. = ALIGN(32);
 	.bss : {
 		*(.sbss)
 		*(.sbss.*)
