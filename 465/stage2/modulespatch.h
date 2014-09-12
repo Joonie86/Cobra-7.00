@@ -500,14 +500,14 @@
 #define umd_mutex_offset		(0x64480+0x38C) //FIXED!!
 
 /* pemucorelib */ //DONE
-#define psp_eboot_dec_patch		0x5E6B0 //
+#define psp_eboot_dec_patch		0x5E6BC //
 #define psp_prx_patch			0x577D8 //
 #define psp_savedata_bind_patch1	0x7A4BC //
 #define psp_savedata_bind_patch2	0x7A514  //
 #define psp_savedata_bind_patch3	0x7A030 //
 #define psp_extra_savedata_patch	0x8753C //
 #define psp_prometheus_patch		0x12EA28 //
-#define prx_patch_call_lr		0x58920 //
+#define prx_patch_call_lr		0x5892C //
 
 /* emulator_drm */ //DONE
 #define psp_drm_tag_overwrite		0x4C68 //
