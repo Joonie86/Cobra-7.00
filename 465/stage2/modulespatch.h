@@ -401,17 +401,17 @@
 /* libfs (external */
 #define aio_copy_root_offset		0xD5B4
 
-#elif defined(FIRMWARE_4_65)
+#elif defined(FIRMWARE_4_65) // Ported by Joonie as of 09/15/2014
 
 #define VSH_HASH			0xa002421e002e3730 //
 #define VSH_DAR_HASH			0xa002421e002e3730 // /* 1.00, 1.01. 1.02 Same for Darknet CFW
 #define BASIC_PLUGINS_HASH		0xb59827ee0001f7ef //
-#define BASIC_PLUGINS_DAR_HASH		0xb59827ee0001f7ef // Same for hab, fer, arc */
+#define BASIC_PLUGINS_DAR_HASH		0xb59827ee0001f7ef // 
 #define NAS_PLUGIN_HASH			0xacf4af2b00027868 //
-#define NAS_PLUGIN_DAR_HASH		0xacf4af2b00027868 // Same for hab, fer, arc */
+#define NAS_PLUGIN_DAR_HASH		0xacf4af2b00027868 // 
 #define EXPLORE_PLUGIN_HASH		0xacf4af2b000ec8cb //
-#define EXPLORE_PLUGIN_DAR_HASH		0xacf4af2b000ec8cb //  Same for hab, fer, arc */
-#define EXPLORE_CATEGORY_GAME_HASH	0x9cb322b600056e97 // Rog hash is same as ofw even if file is different. Same for hab, fer, arc */
+#define EXPLORE_PLUGIN_DAR_HASH		0xacf4af2b000ec8cb //  
+#define EXPLORE_CATEGORY_GAME_HASH	0x9cb322b600056e97 //  
 #define BDP_DISC_CHECK_PLUGIN_HASH	0xb8b7a5f9000031a0 //
 #define PS1_EMU_HASH			0x7a6cbdcf0009aa39 //
 #define PS1_NETEMU_HASH			0x7a300d52000be207 //
@@ -449,35 +449,35 @@
 #define psn_spoof_version_patch         0x1A39E0 //
 #define vmode_patch_offset          	0x444D18 // or 444D18 "
 
-/* basic_plugins */// DONE
+/* basic_plugins */// 
 #define ps1emu_type_check_offset	0x1F638 //
 #define pspemu_path_offset		0x4A810 //
 #define psptrans_path_offset		0x4B430 //
 
-/* nas_plugin */// DONE
-#define elf2_func1 			0x2E848 //
-#define elf2_func1_offset		0x374 //
-#define geohot_pkg_offset		0x3174 //
+/* nas_plugin */// Obsolete
+//#define elf2_func1 			0x2E848 //
+//#define elf2_func1_offset		0x374 //
+//#define geohot_pkg_offset		0x3174 //
 
-/* explore_plugin */// NEED TO CHECK
-#define app_home_offset			0x251040 //FIXED 12/28/13
+/* explore_plugin */// 
+#define app_home_offset			0x251040 //
 #define ps2_nonbw_offset		0xDD978 //
 
 /* explore_category_game *///DONE
 #define ps2_nonbw_offset2		0x68354 // Done
-//#define unk_patch_offset1		0x546C // unknown patch from E3 cfw */
-//#define unk_patch_offset2		0x5490 // unknown patch from E3 cfw */
+//#define unk_patch_offset1		0x546C // unknown patch from E3 cfw */ Obsolete
+//#define unk_patch_offset2		0x5490 // unknown patch from E3 cfw */ Obsolete
 
-/* bdp_disc_check_plugin */ //DONE
+/* bdp_disc_check_plugin */ // 
 #define dvd_video_region_check_offset	0x152C //
 
-/* ps1_emu */ //DONE
+/* ps1_emu */ //
 #define ps1_emu_get_region_offset	0x3E74 //
 
-/* ps1_netemu */ //DONE
+/* ps1_netemu */ //
 #define ps1_netemu_get_region_offset	0xA440C //
 
-/* game_ext_plugin */// DONE
+/* game_ext_plugin */// 
 #define sfo_check_offset		0x23F30 //
 #define ps2_nonbw_offset3		0x17004 //
 #define ps_region_error_offset		0x68C4 //
@@ -486,7 +486,7 @@
 #define psp_set_psp_mode_offset		0x1C18 //
 
 /* emulator_api */ //DONE
-#define psp_read			0x102D8 //FIXED!!
+#define psp_read			0x102D8 //
 #define psp_read_header			0x1125C //
 #define psp_drm_patch5			0x11080 //
 #define psp_drm_patch6			0x110B0 //
@@ -499,13 +499,13 @@
 #define psp_product_id_patch3		0x115F8 //
 #define umd_mutex_offset		(0x64480+0x38C) //FIXED!!
 
-/* pemucorelib */ //DONE
+/* pemucorelib */ // DONE
 #define psp_eboot_dec_patch		0x5E6BC //
 #define psp_prx_patch			0x577D8 //
 #define psp_savedata_bind_patch1	0x7A4BC //
 #define psp_savedata_bind_patch2	0x7A514  //
 #define psp_savedata_bind_patch3	0x7A030 //
-#define psp_extra_savedata_patch	0x8753C //
+#define psp_extra_savedata_patch	0x87540 // *4.55 = 0x8753C // 
 #define psp_prometheus_patch		0x12EA28 //
 #define prx_patch_call_lr		0x5892C //
 
@@ -513,7 +513,7 @@
 #define psp_drm_tag_overwrite		0x4C68 //
 #define psp_drm_key_overwrite		(0x27580-0xBE80) //
 
-/* libsysutil_savedata_psp */ //DONE
+/* libsysutil_savedata_psp */ 
 #define psp_savedata_patch1		0x46CC
 #define psp_savedata_patch2		0x46A4
 #define psp_savedata_patch3		0x4504
@@ -521,8 +521,8 @@
 #define psp_savedata_patch5		0x4550
 #define psp_savedata_patch6		0x46B8
 
-/* libfs (external */ //DONE
-#define aio_copy_root_offset		0xD658 //FIXED!!!!
+/* libfs (external */ // The same as 4.55
+#define aio_copy_root_offset		0xD658 //
 
 #endif /* FIRMWARE */
 

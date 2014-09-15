@@ -110,10 +110,12 @@ static int loading_vsh_plugin;
 
 SprxPatch vsh_patches[] =
 {
+	/*
 	{ elf1_func1 + elf1_func1_offset, LI(R3, 1), &condition_true },
 	{ elf1_func1 + elf1_func1_offset + 4, BLR, &condition_true },
 	{ elf1_func2 + elf1_func2_offset, NOP, &condition_true },
 	{ game_update_offset, LI(R3, -1), &condition_disable_gameupdate }, 
+	*/
 	{ ps2tonet_patch, ORI(R3, R3, 0x8204), &condition_ps2softemu },
 	{ ps2tonet_size_patch, LI(R5, 0x40), &condition_ps2softemu },
 	{ 0 }
@@ -136,9 +138,11 @@ SprxPatch nas_plugin_patches[] =
 
 SprxPatch explore_plugin_patches[] =
 {
+	/*
 	{ app_home_offset, 0x2f646576, &condition_apphome },
 	{ app_home_offset+4, 0x5f626476, &condition_apphome },
 	{ app_home_offset+8, 0x642f5053, &condition_apphome }, 
+	*/
 	{ ps2_nonbw_offset, LI(0, 1), &condition_ps2softemu },
 	{ 0 }
 };
