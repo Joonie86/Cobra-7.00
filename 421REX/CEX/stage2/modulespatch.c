@@ -108,10 +108,10 @@ uint8_t block_peek = 0;
 sys_prx_id_t vsh_plugins[MAX_VSH_PLUGINS];
 static int loading_vsh_plugin;
 
-SprxPatch dex_vsh_patches[] =
+SprxPatch vsh_patches[] =
 {
-	{ dex_ps2tonet_patch, ORI(R3, R3, 0x8204), &condition_ps2softemu },
-	{ dex_ps2tonet_size_patch, LI(R5, 0x40), &condition_ps2softemu },
+	{ ps2tonet_patch, ORI(R3, R3, 0x8204), &condition_ps2softemu },
+	{ ps2tonet_size_patch, LI(R5, 0x40), &condition_ps2softemu },
 	{ 0 }
 };
 
@@ -137,9 +137,9 @@ SprxPatch nas_plugin_patches[] =
 
 SprxPatch explore_plugin_patches[] =
 {
-	/*{ app_home_offset, 0x2f646576, &condition_apphome },
+	{ app_home_offset, 0x2f646576, &condition_apphome },
 	{ app_home_offset+4, 0x5f626476, &condition_apphome },
-	{ app_home_offset+8, 0x642f5053, &condition_apphome }, */
+	{ app_home_offset+8, 0x642f5053, &condition_apphome }, 
 	{ ps2_nonbw_offset, LI(0, 1), &condition_ps2softemu },
 	{ 0 }
 };
@@ -518,15 +518,14 @@ SprxPatch libfs_external_patches[] =
 
 PatchTableEntry patch_table[] =
 {
-	{ VSH_HASH, dex_vsh_patches },
-	{ VSH_DEX_HASH, dex_vsh_patches },
+	{ VSH_HASH, vsh_patches },
+	{ VSH_DEX_HASH, vsh_patches },
 	{ VSH_CEX_HASH, cex_vsh_patches },
 	{ BASIC_PLUGINS_HASH, basic_plugins_patches },
 	{ BASIC_PLUGINS_ROG_HASH, basic_plugins_patches },
 	{ NAS_PLUGIN_HASH, nas_plugin_patches },
 	{ NAS_PLUGIN_ROG_HASH, nas_plugin_patches },
 	{ EXPLORE_PLUGIN_HASH, explore_plugin_patches },
-	{ EXPLORE_PLUGIN_ROG_HASH, explore_plugin_patches },
 	{ EXPLORE_CATEGORY_GAME_HASH, explore_category_game_patches },	
 	{ BDP_DISC_CHECK_PLUGIN_HASH, bdp_disc_check_plugin_patches },
 	{ PS1_EMU_HASH, ps1_emu_patches },
@@ -548,7 +547,7 @@ PatchTableEntry patch_table[] =
 
 static char *hash_to_name(uint64_t hash)
 {
-	if (hash == VSH_HASH ||hash == VSH_DEX_HASH)
+	if (hash == VSH_HASH || hash == VSH_DEX_HASH)
 	{
 		return "vsh.self";
 	}
@@ -560,7 +559,7 @@ static char *hash_to_name(uint64_t hash)
 	{
 		return "nas_plugin.sprx";
 	}
-	else if (hash == EXPLORE_PLUGIN_HASH || hash == EXPLORE_PLUGIN_ROG_HASH)
+	else if (hash == EXPLORE_PLUGIN_HASH)
 	{
 		return "explore_plugin.sprx";
 	}

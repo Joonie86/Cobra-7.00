@@ -8,15 +8,14 @@
 
 #if defined(FIRMWARE_4_21)
 
-#define VSH_HASH			0xa0026096002e22f3
-#define VSH_DEX_HASH			0xa0026096002e22f3 /* REX vsh.self/vsh.self.swp */
-#define VSH_CEX_HASH			0xa001ccbe002dcc13 /* REX vsh.self.cexsp */
+#define VSH_HASH			0xa0026096002dfaea
+#define VSH_DEX_HASH			0xa0026096002dfaec /* REX vsh.self/vsh.self.swp */
+#define VSH_CEX_HASH			0xa001ccbe002dbed3 /* REX vsh.self.cexsp */
 #define BASIC_PLUGINS_HASH		0xd72209580001f7a2
 #define BASIC_PLUGINS_ROG_HASH		0xd72295740001fa30 /* Same for hab, fer, arc */
 #define NAS_PLUGIN_HASH			0xacf4af2b00026801
 #define NAS_PLUGIN_ROG_HASH		0xacf4af2b00025d5d /* Same for hab, fer, arc */
-#define EXPLORE_PLUGIN_HASH		0xacf4af2b000ec8a6
-#define EXPLORE_PLUGIN_ROG_HASH		0xacf4af2b000e5c66 /* Same for hab, fer, arc */
+#define EXPLORE_PLUGIN_HASH		0xacf4af2b000e71cf
 #define EXPLORE_CATEGORY_GAME_HASH	0x9cb3c54a00057710 /* Rog hash is same as ofw even if file is different. Same for hab, fer, arc */
 #define BDP_DISC_CHECK_PLUGIN_HASH	0xb8b7a5f90000319f
 #define PS1_EMU_HASH			0x7a67e830000a18b6
@@ -32,8 +31,8 @@
  
 // vsh dex //
 #define vsh_text_size			0x6B0000 // memsz of first program header aligned to 0x10000 //
-#define dex_ps2tonet_patch			0xC9A30
-#define dex_ps2tonet_size_patch		0xC9A24
+#define ps2tonet_patch			0xC9A30
+#define ps2tonet_size_patch		0xC9A24
 #define dex_psp_drm_patch1			0x244068
 #define dex_psp_drm_patch2			0x244B00
 #define dex_psp_drm_patch3			0x244740
@@ -44,10 +43,10 @@
 #define dex_psp_drm_patchD			0x24416C
 #define dex_psp_drm_patchE			0x244170
 #define dex_psp_drm_patchF			0x244B34
-//#define revision_offset			0x65BBA0
-//#define revision_offset2		0x6FFC1C // In data section //
-//#define spoof_version_patch		0xBDBD0
-//#define psn_spoof_version_patch		0x1A75AC
+#define revision_offset			0x65BBA0
+#define revision_offset2		0x6FFC1C // In data section //
+#define spoof_version_patch		0xBDBD0
+#define psn_spoof_version_patch		0x1A75AC
 #define dex_vmode_patch_offset		0x446650
 // vsh cex //
 #define cex_ps2tonet_patch			0xC44EC
@@ -79,7 +78,7 @@
 //#define geohot_pkg_offset		0x3174
 
 /* explore_plugin */
-//#define app_home_offset			0x246AE8
+#define app_home_offset			0x246AE8
 #define ps2_nonbw_offset		0xDAFBC
 
 /* explore_category_game */
