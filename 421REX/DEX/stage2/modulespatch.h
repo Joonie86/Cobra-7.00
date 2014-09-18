@@ -31,9 +31,9 @@
 #define LIBFS_EXTERNAL_HASH		0x5bc7bec800006430
  
 // vsh dex //
-#define vsh_text_size			0x6B0000 // memsz of first program header aligned to 0x10000 //
+#define vsh_text_size			        0x6B0000 // memsz of first program header aligned to 0x10000 //
 #define dex_ps2tonet_patch			0xC9A30
-#define dex_ps2tonet_size_patch		0xC9A24
+#define dex_ps2tonet_size_patch		        0xC9A24
 #define dex_psp_drm_patch1			0x244068
 #define dex_psp_drm_patch2			0x244B00
 #define dex_psp_drm_patch3			0x244740
@@ -48,10 +48,10 @@
 //#define revision_offset2		0x6FFC1C // In data section //
 //#define spoof_version_patch		0xBDBD0
 //#define psn_spoof_version_patch		0x1A75AC
-//#define vmode_patch_offset		0x446650
+#define dex_vmode_patch_offset		        0x446650
 // vsh cex //
 #define cex_ps2tonet_patch			0xC44EC
-#define cex_ps2tonet_size_patch		0xC44E0
+#define cex_ps2tonet_size_patch		        0xC44E0
 #define cex_psp_drm_patch1			0x23C85C
 #define cex_psp_drm_patch2			0x23D2F4
 #define cex_psp_drm_patch3			0x23CF34
@@ -66,7 +66,7 @@
 //#define revision_offset2		0x6FF280 // In data section //
 //#define spoof_version_patch		0xB8D78
 //#define psn_spoof_version_patch		0x19FCA4
-//#define vmode_patch_offset		0x43EA78
+#define cex_vmode_patch_offset		0x43EA78
 
 /* basic_plugins */
 #define ps1emu_type_check_offset	0x20114

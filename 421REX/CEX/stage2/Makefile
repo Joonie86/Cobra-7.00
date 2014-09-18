@@ -51,12 +51,12 @@ ifeq ($(BUILD_TYPE), ps2_debug)
 OBJS += laboratory.o ../debug/src/debug.o ../debug/src/printf.o ../debug/src/debug_util.o
 endif
 
-all: stage2.bin
+all: stage2.cex
 
-objdump: stage2.bin
-	$(OBJDUMP) -D -EB -b binary -m powerpc:common64 stage2.bin
+objdump: stage2.cex
+	$(OBJDUMP) -D -EB -b binary -m powerpc:common64 stage2.cex
 
-%.bin: %.elf
+%.cex: %.elf
 	$(OBJCOPY) -O binary $< $@	
 
 stage2.elf: $(OBJS) stage2.ld

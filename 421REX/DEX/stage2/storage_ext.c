@@ -2103,7 +2103,10 @@ static INLINE void do_video_mode_patch(void)
 		if (patch != 0)
 		{
 			DPRINTF("Doing patch %08X\n", patch);
-			copy_to_user(&patch, (void *)(vmode_patch_offset+0x10000), 4);					
+			copy_to_user(&patch, (void *)(dex_vmode_patch_offset+0x10000), 4);
+	
+			DPRINTF("Doing patch %08X\n", patch);
+			copy_to_user(&patch, (void *)(cex_vmode_patch_offset+0x10000), 4);						
 		}
 	}
 }

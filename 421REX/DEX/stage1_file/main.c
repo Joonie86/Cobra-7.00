@@ -19,9 +19,9 @@
 #define DPRINT_HEX(a, b)
 #endif
 
-#define STAGE2_FILE_DEB	"/dev_flash/rebug/cobra/stage2.dex"
+// #define STAGE2_FILE	"/dev_flash/sys/stage2.cex"
 // #define STAGE2_FILE	"/dev_flash/sys/stage2.bin"
-// #define STAGE2_FILE	"/dev_flash/rebug/cobra/stage2.cex"
+#define STAGE2_FILE	"/dev_flash/rebug/cobra/stage2.dex"
 // #define STAGE2_BYPASS	"/dev_usb000/stage2_bypass.txt"
 
 void flash_mount_clone(void);
@@ -78,7 +78,7 @@ int main(void)
 				}
 				else
 				{
-					DPRINTF("Cannot allocate CEX stage2\n");
+					DPRINTF("Cannot allocate DEX stage2\n");
 				}
 				
 				cellFsClose(fd);
@@ -86,7 +86,7 @@ int main(void)
 		}
 		else
 		{
-			DPRINTF("There is no CEX stage2, booting system.\n");
+			DPRINTF("There is no DEX stage2, booting system.\n");
 		}
 	}
 	
@@ -99,5 +99,4 @@ int main(void)
 	}
 	
 	return ret;
-}
 }
