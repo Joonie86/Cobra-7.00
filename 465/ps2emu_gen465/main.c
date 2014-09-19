@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
 	patch_self(self_input, "temp.self", sh_addr, data_addr, (patch_addr != 0xFFFFFFFF) && (patch_addr != 0xFFFFFFFE), (patch_addr != 0xFFFFFFFF));
 	
 	//command2("unself", "temp.self", "temp.elf");
-	command3("scetool.exe", "--decrypt", "temp.self", "temp.elf");	
+	command3("scetool", "--decrypt", "temp.self", "temp.elf");	
 	
 	bin = fopen(payload, "rb");
 	if (!bin)
