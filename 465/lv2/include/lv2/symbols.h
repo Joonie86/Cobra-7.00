@@ -1613,12 +1613,6 @@
 
 #elif defined(FIRMWARE_4_65) // Ported by Habib, Joonie, Haxxxen and Aldostools
 
-//SYMBOLS CHANGED OR THAT NEED TO BE VERIFIED  //Aldo (Sep 11/2014 3:00PM)
-//#define set_pte_symbol                                  0x5E308 // verified.  Before it was 0x5E318 // Thanks Habib!
-//#define cond_signal_all_symbol                          0x13104 // bytes matched: 0x20****  F821FF917C0802A6F8010080480186BDE8010080386000007C0803A638210070  // Before it was 0x13708
-//#define cellFsUtime_symbol                              0x2A1898 // Before it was 0x2A1084 // Thanks Habib!
-//#define cellFsUtilUmount_symbol                         0x2A12E4 // Before it was 0x29F8BC Thanks Habib!
-//#define authenticate_program_segment_symbol             0x5A888 // verified (may need to be rechecked)
 #define TOC						0x34F960 //
 
 #define create_kernel_object_symbol			0x11FB0 //
@@ -1640,7 +1634,7 @@
 #define page_unexport_from_proc_symbol			0x5FC64 //
 #define kernel_ea_to_lpar_addr_symbol			0x700C4 //
 #define process_ea_to_lpar_addr_ex_symbol		0x776D8 //
-#define set_pte_symbol                                  0x5E308 // verified.  Before it was 0x5E318 // Thanks Habib!
+#define set_pte_symbol                                  0x5E308 // 
 #define map_process_memory_symbol			0x771E4 //
 #define panic_symbol					0x276258 //
 
@@ -1694,7 +1688,7 @@
 #define cond_wait_symbol				0x13750 //
 #define cond_wait_ex_symbol				0x1F148 //
 #define cond_signal_symbol				0x1372C //
-#define cond_signal_all_symbol				0x13104 // *OLD 0x13708
+#define cond_signal_all_symbol				0x13708
 
 #define semaphore_initialize_symbol			0x30C54 //
 #define semaphore_wait_ex_symbol			0x3095C //
@@ -1723,7 +1717,7 @@
 #define cellFsUnlink_internal_symbol			0x19C4B4 //
 
 #define cellFsUtilMount_symbol				0x29F908 //
-#define cellFsUtilUmount_symbol                         0x2A12E4 // Before it was 0x29F8BC Thanks Habib!
+#define cellFsUtilUmount_symbol                         0x29F8DC
 #define cellFsUtilNewfs_symbol				0x2A1330 //
 
 #define pathdup_from_user_symbol			0x1A23A8 //

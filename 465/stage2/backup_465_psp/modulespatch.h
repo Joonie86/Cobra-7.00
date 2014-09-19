@@ -426,11 +426,11 @@
 
 /* vsh */ //ALMOST DONE
 #define vsh_text_size	                0x6B0000 // /* memsz of first program header aligned to 0x10000 */
-//#define elf1_func1                      0x5EE660 // ***
-//#define elf1_func1_offset               0x00 //
-//#define elf1_func2                      0x244BB8 // ***
-//#define elf1_func2_offset               0x14 //
-//#define game_update_offset          	0x270624 //***
+#define elf1_func1                      0x5EE660 // ***
+#define elf1_func1_offset               0x00 //
+#define elf1_func2                      0x244BB8 // ***
+#define elf1_func2_offset               0x14 //
+#define game_update_offset          	0x270624 //***
 #define ps2tonet_patch          	0xC4C24 // "60638202 480000444BFF"
 #define ps2tonet_size_patch         	0xC4C18 // "38A004F0786400203860000060638202"
 #define psp_drm_patch1           	0x241E84 // ***
@@ -460,11 +460,13 @@
 //#define geohot_pkg_offset		0x3174 //
 
 /* explore_plugin */// 
-//#define app_home_offset			0x251040 //
+#define app_home_offset			0x251040 //
 #define ps2_nonbw_offset		0xDD978 //
 
 /* explore_category_game *///DONE
 #define ps2_nonbw_offset2		0x68354 // Done
+//#define unk_patch_offset1		0x546C // unknown patch from E3 cfw */ Obsolete
+//#define unk_patch_offset2		0x5490 // unknown patch from E3 cfw */ Obsolete
 
 /* bdp_disc_check_plugin */ // 
 #define dvd_video_region_check_offset	0x152C //
@@ -503,7 +505,7 @@
 #define psp_savedata_bind_patch1	0x7A4BC //
 #define psp_savedata_bind_patch2	0x7A514  //
 #define psp_savedata_bind_patch3	0x7A030 //
-#define psp_extra_savedata_patch	0x8753C //
+#define psp_extra_savedata_patch	0x87540 // *4.55 = 0x8753C // 
 #define psp_prometheus_patch		0x12EA28 //
 #define prx_patch_call_lr		0x5892C //
 
@@ -512,12 +514,12 @@
 #define psp_drm_key_overwrite		(0x27580-0xBE80) //
 
 /* libsysutil_savedata_psp */ 
-#define psp_savedata_patch1		0x46D4 //
-#define psp_savedata_patch2		0x46AC //
-#define psp_savedata_patch3		0x450C //
-#define psp_savedata_patch4		0x4544 //
-#define psp_savedata_patch5		0x4558 //
-#define psp_savedata_patch6		0x46C0 //
+#define psp_savedata_patch1		0x46CC
+#define psp_savedata_patch2		0x46A4
+#define psp_savedata_patch3		0x4504
+#define psp_savedata_patch4		0x453C
+#define psp_savedata_patch5		0x4550
+#define psp_savedata_patch6		0x46B8
 
 /* libfs (external */ // The same as 4.55
 #define aio_copy_root_offset		0xD658 //
